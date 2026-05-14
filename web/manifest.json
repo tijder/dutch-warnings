@@ -1,0 +1,35 @@
+{
+    "name": "Dutch Warnings",
+    "short_name": "Dutch Warnings",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#21468B",
+    "theme_color": "#AE1C28",
+    "description": "Actuele NL-Alert waarschuwingen voor Nederland met offline cache en kaart.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

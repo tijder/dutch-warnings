@@ -1,0 +1,140 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Dutch Warnings",
+  "navOverview": "Overview",
+  "navMap": "Map",
+  "navSettings": "Settings",
+  "refresh": "Refresh",
+  "cancel": "Cancel",
+  "done": "Done",
+  "save": "Save",
+  "offlineBanner": "Offline – showing cached messages",
+  "locationAvailable": "Location available",
+  "locationUnavailable": "Location unavailable",
+  "activeAlertsCount": "{count, plural, =1{1 active NL-Alert} other{{count} active NL-Alerts}}",
+  "@activeAlertsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "noAlertsFound": "No NL-Alerts found",
+  "allMessagesLoaded": "All messages loaded",
+  "mapOverviewTitle": "Map overview",
+  "mapModeCurrent": "Current",
+  "mapModeHistory": "History",
+  "selectPeriod": "Select period",
+  "choosePeriodButton": "Choose period",
+  "last30Days": "Last 30 days",
+  "selectPeriodTitle": "Select a period",
+  "selectPeriodDesc": "Choose a date range to see historical\nNL-Alerts on the map.",
+  "noActiveAlerts": "No active NL-Alerts",
+  "noActiveAlertsDesc": "There are currently no active warnings.",
+  "osmContributors": "OpenStreetMap contributors",
+  "settingsTitle": "Settings",
+  "autoRefresh": "Auto refresh",
+  "interval": "Interval",
+  "intervalMinutes": "{count, plural, =1{1 minute} other{{count} minutes}}",
+  "@intervalMinutes": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "sectionLocation": "My location",
+  "locationMode": "Location mode",
+  "locationAutomatic": "Automatic (GPS)",
+  "locationManual": "Manual",
+  "locationOff": "Off",
+  "coordinates": "Coordinates",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "coordinatesSaved": "Coordinates saved",
+  "sectionMap": "Map",
+  "tileServerUrl": "Tile server URL",
+  "tileServerHint": "Use {z}, {x}, {y} as placeholders.",
+  "@tileServerHint": {
+    "placeholders": {
+      "z": { "type": "String" },
+      "x": { "type": "String" },
+      "y": { "type": "String" }
+    }
+  },
+  "tileServerSaved": "Tile server saved",
+  "presets": "Presets",
+  "resetDefaults": "Reset to defaults",
+  "sectionData": "Data",
+  "loadAllAlerts": "Load all alerts",
+  "alertsLoadingCount": "{count} alerts loaded…",
+  "@alertsLoadingCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "allAlertsLoadedCount": "All {count} alerts loaded.",
+  "@allAlertsLoadedCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "alertsCount": "{count} alerts loaded.",
+  "@alertsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "sectionDebug": "Debug",
+  "debugFakeAlert": "Fake alert on every refresh",
+  "debugFakeAlertDesc": "Generates an active test alert that triggers a notification. With sound if location is available.",
+  "debugSendAlert": "Send a test alert now",
+  "alertNotFound": "Warning not found",
+  "startTime": "Start time",
+  "endTime": "End time",
+  "messageLabelDutch": "Dutch",
+  "messageLabelEnglish": "English",
+  "statusActive": "Active",
+  "statusPast": "Past",
+  "affectsYourLocation": "Applies to your location",
+  "affectedBannerText": "Warning: your current location is within the warning area of this NL-Alert.",
+  "cardAffectsLocation": "This warning area applies to your location",
+  "statusYou": "You!",
+  "navStats": "Statistics",
+  "statsTitle": "Statistics",
+  "statsLoading": "Loading all alerts…",
+  "statsLoadingCount": "{count} alerts loaded",
+  "@statsLoadingCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "statsChartMonthly": "Alerts per month",
+  "statsChartMonthlyInfo": "Shows the total number of NL-Alerts per calendar month, summed across all available years. This reveals which months historically see the most warnings.",
+  "statsChartTimeline": "Alerts over time",
+  "statsChartTimelineInfo": "Shows the number of NL-Alerts per year, revealing the growth or decline in NL-Alert usage over time.",
+  "statsChartDuration": "Alert duration",
+  "statsChartDurationInfo": "Shows how long alerts were active, grouped into four time categories. Only alerts with a known end time are included.",
+  "statsChartByHour": "Alerts by hour",
+  "statsChartByHourInfo": "Shows which hour of the day most NL-Alerts are issued, based on start time. Numbers on the x-axis are hours in 24-hour format.",
+  "statsDurLt1h": "< 1h",
+  "statsDur1to4h": "1–4h",
+  "statsDur4to24h": "4–24h",
+  "statsDurGt24h": "> 24h",
+  "statsNoData": "No data available",
+
+  "alertId": "ID: {id}",
+  "@alertId": {
+    "placeholders": {
+      "id": { "type": "String" }
+    }
+  },
+
+  "sectionAbout": "About",
+  "aboutApp": "About Dutch Warnings",
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "placeholders": {
+      "version": { "type": "String" }
+    }
+  },
+  "aboutLegalese": "Copyright © 2026 Dutch Warnings contributors\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 or later.",
+  "aboutViewLicenses": "View licenses"
+}

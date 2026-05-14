@@ -1,0 +1,311 @@
+{
+  "@@locale": "nl",
+
+  "appTitle": "Dutch Warnings",
+  "@appTitle": { "description": "App title shown in the navigation bar" },
+
+  "navOverview": "Overzicht",
+  "@navOverview": { "description": "Navigation label for the alerts list tab" },
+
+  "navMap": "Kaart",
+  "@navMap": { "description": "Navigation label for the map tab" },
+
+  "navSettings": "Instellingen",
+  "@navSettings": { "description": "Navigation label for the settings tab" },
+
+  "refresh": "Vernieuwen",
+  "@refresh": { "description": "Refresh action label and settings section header" },
+
+  "cancel": "Annuleren",
+  "@cancel": { "description": "Cancel button label" },
+
+  "done": "Klaar",
+  "@done": { "description": "Done/confirm button label" },
+
+  "save": "Opslaan",
+  "@save": { "description": "Save button label" },
+
+  "offlineBanner": "Offline – gecachte berichten worden getoond",
+  "@offlineBanner": { "description": "Tooltip shown when the app is offline" },
+
+  "locationAvailable": "Locatie beschikbaar",
+  "@locationAvailable": { "description": "Tooltip shown when GPS location is available" },
+
+  "locationUnavailable": "Locatie niet beschikbaar",
+  "@locationUnavailable": { "description": "Tooltip shown when GPS location is not available" },
+
+  "activeAlertsCount": "{count, plural, =1{1 actief NL-Alert} other{{count} actieve NL-Alerts}}",
+  "@activeAlertsCount": {
+    "description": "Number of active alerts shown in the list header",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "noAlertsFound": "Geen NL-Alerts gevonden",
+  "@noAlertsFound": { "description": "Empty state label when no alerts are found" },
+
+  "allMessagesLoaded": "Alle berichten geladen",
+  "@allMessagesLoaded": { "description": "Footer text when all alerts have been loaded" },
+
+  "mapOverviewTitle": "Kaartoverzicht",
+  "@mapOverviewTitle": { "description": "Title of the map overview screen" },
+
+  "mapModeCurrent": "Huidig",
+  "@mapModeCurrent": { "description": "Segmented button label for current alerts mode" },
+
+  "mapModeHistory": "Historie",
+  "@mapModeHistory": { "description": "Segmented button label for history mode" },
+
+  "selectPeriod": "Selecteer periode",
+  "@selectPeriod": { "description": "Period selector button label and date picker help text" },
+
+  "choosePeriodButton": "Periode kiezen",
+  "@choosePeriodButton": { "description": "Button label that opens the date range picker" },
+
+  "last30Days": "Laatste 30 dagen",
+  "@last30Days": { "description": "Button label to set the date range to the last 30 days" },
+
+  "selectPeriodTitle": "Selecteer een periode",
+  "@selectPeriodTitle": { "description": "Title in the history mode empty state card" },
+
+  "selectPeriodDesc": "Kies een datumbereik om historische\nNL-Alerts op de kaart te zien.",
+  "@selectPeriodDesc": { "description": "Description in the history mode empty state card" },
+
+  "noActiveAlerts": "Geen actieve NL-Alerts",
+  "@noActiveAlerts": { "description": "Title shown when there are no active alerts on the map" },
+
+  "noActiveAlertsDesc": "Er zijn momenteel geen actieve waarschuwingen.",
+  "@noActiveAlertsDesc": { "description": "Description shown when there are no active alerts on the map" },
+
+  "osmContributors": "OpenStreetMap bijdragers",
+  "@osmContributors": { "description": "Map attribution text" },
+
+  "settingsTitle": "Instellingen",
+  "@settingsTitle": { "description": "Settings screen title" },
+
+  "autoRefresh": "Automatisch vernieuwen",
+  "@autoRefresh": { "description": "Label for the auto-refresh toggle" },
+
+  "interval": "Interval",
+  "@interval": { "description": "Label for the refresh interval dropdown" },
+
+  "intervalMinutes": "{count, plural, =1{1 minuut} other{{count} minuten}}",
+  "@intervalMinutes": {
+    "description": "Refresh interval expressed in minutes",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "sectionLocation": "Mijn locatie",
+  "@sectionLocation": { "description": "Settings section header for location" },
+
+  "locationMode": "Locatiemodus",
+  "@locationMode": { "description": "Label for the location mode dropdown" },
+
+  "locationAutomatic": "Automatisch (GPS)",
+  "@locationAutomatic": { "description": "Location mode: automatic via GPS" },
+
+  "locationManual": "Handmatig",
+  "@locationManual": { "description": "Location mode: manual coordinates" },
+
+  "locationOff": "Uit",
+  "@locationOff": { "description": "Location mode: disabled" },
+
+  "coordinates": "Coördinaten",
+  "@coordinates": { "description": "Label for the manual coordinates input section" },
+
+  "latitude": "Breedtegraad",
+  "@latitude": { "description": "Latitude input field label" },
+
+  "longitude": "Lengtegraad",
+  "@longitude": { "description": "Longitude input field label" },
+
+  "coordinatesSaved": "Coördinaten opgeslagen",
+  "@coordinatesSaved": { "description": "Snackbar message after saving coordinates" },
+
+  "sectionMap": "Kaart",
+  "@sectionMap": { "description": "Settings section header for map options" },
+
+  "tileServerUrl": "Tile server URL",
+  "@tileServerUrl": { "description": "Label for the tile server URL input field" },
+
+  "tileServerHint": "Gebruik {z}, {x}, {y} als placeholders.",
+  "@tileServerHint": {
+    "description": "Hint text below the tile server URL field",
+    "placeholders": {
+      "z": { "type": "String" },
+      "x": { "type": "String" },
+      "y": { "type": "String" }
+    }
+  },
+
+  "tileServerSaved": "Tile server opgeslagen",
+  "@tileServerSaved": { "description": "Snackbar message after saving tile server URL" },
+
+  "presets": "Presets",
+  "@presets": { "description": "Label above the preset tile server chips" },
+
+  "resetDefaults": "Standaard herstellen",
+  "@resetDefaults": { "description": "Button to reset tile server URL to the default" },
+
+  "sectionData": "Gegevens",
+  "@sectionData": { "description": "Settings section header for data management" },
+
+  "loadAllAlerts": "Laad alle alerts in",
+  "@loadAllAlerts": { "description": "Button to fetch all available alerts" },
+
+  "alertsLoadingCount": "{count} alerts geladen…",
+  "@alertsLoadingCount": {
+    "description": "Status text while loading all alerts",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "allAlertsLoadedCount": "Alle {count} alerts zijn geladen.",
+  "@allAlertsLoadedCount": {
+    "description": "Status text when all alerts are fully loaded",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "alertsCount": "{count} alerts geladen.",
+  "@alertsCount": {
+    "description": "Status text showing how many alerts are currently loaded",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "sectionDebug": "Debug",
+  "@sectionDebug": { "description": "Settings section header for debug options" },
+
+  "debugFakeAlert": "Fake alert bij elke refresh",
+  "@debugFakeAlert": { "description": "Toggle label for injecting a test alert on every refresh" },
+
+  "debugFakeAlertDesc": "Genereert een actieve testalert die een notificatie triggert. Met geluid als locatie beschikbaar is.",
+  "@debugFakeAlertDesc": { "description": "Description of the fake alert debug feature" },
+
+  "debugSendAlert": "Nu een testalert sturen",
+  "@debugSendAlert": { "description": "Button to immediately send a test alert" },
+
+  "alertNotFound": "Waarschuwing niet gevonden",
+  "@alertNotFound": { "description": "Shown when an alert cannot be found by its ID" },
+
+  "startTime": "Starttijd",
+  "@startTime": { "description": "Label for the alert start time" },
+
+  "endTime": "Eindtijd",
+  "@endTime": { "description": "Label for the alert end time" },
+
+  "messageLabelDutch": "Nederlands",
+  "@messageLabelDutch": { "description": "Section label for the Dutch alert message" },
+
+  "messageLabelEnglish": "English",
+  "@messageLabelEnglish": { "description": "Section label for the English alert message" },
+
+  "statusActive": "Actief",
+  "@statusActive": { "description": "Badge/chip label for an active alert" },
+
+  "statusPast": "Afgelopen",
+  "@statusPast": { "description": "Badge/chip label for a past alert" },
+
+  "affectsYourLocation": "Geldt voor uw locatie",
+  "@affectsYourLocation": { "description": "Chip label when an alert affects the user's location" },
+
+  "affectedBannerText": "Let op: uw huidige locatie valt binnen het waarschuwingsgebied van dit NL-Alert.",
+  "@affectedBannerText": { "description": "Warning banner when the user is inside the alert area" },
+
+  "cardAffectsLocation": "Dit waarschuwingsgebied geldt voor uw locatie",
+  "@cardAffectsLocation": { "description": "Row text on alert card when the user is in the affected area" },
+
+  "statusYou": "U!",
+  "@statusYou": { "description": "Short badge label when the user is in the affected area" },
+
+  "navStats": "Statistieken",
+  "@navStats": { "description": "Navigation label for the statistics tab" },
+
+  "statsTitle": "Statistieken",
+  "@statsTitle": { "description": "Statistics screen title" },
+
+  "statsLoading": "Alle alerts worden geladen…",
+  "@statsLoading": { "description": "Loading message shown while fetching all alerts for statistics" },
+
+  "statsLoadingCount": "{count} alerts geladen",
+  "@statsLoadingCount": {
+    "description": "Counter shown below the progress bar while loading",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "statsChartMonthly": "Alerts per maand",
+  "@statsChartMonthly": { "description": "Title for the monthly alerts bar chart" },
+
+  "statsChartMonthlyInfo": "Toont het totale aantal NL-Alerts per kalendermaand, opgeteld over alle beschikbare jaren. Zo is zichtbaar in welke maanden historisch de meeste waarschuwingen worden afgegeven.",
+  "@statsChartMonthlyInfo": { "description": "Info text for the monthly chart" },
+
+  "statsChartTimeline": "Alerts over tijd",
+  "@statsChartTimeline": { "description": "Title for the alerts-over-time line chart (per year)" },
+
+  "statsChartTimelineInfo": "Toont het aantal NL-Alerts per jaar. Hiermee is de groei of afname van het NL-Alertsysteem over de tijd zichtbaar.",
+  "@statsChartTimelineInfo": { "description": "Info text for the timeline chart" },
+
+  "statsChartDuration": "Duur van alerts",
+  "@statsChartDuration": { "description": "Title for the alert duration histogram" },
+
+  "statsChartDurationInfo": "Toont hoe lang alerts actief waren, ingedeeld in vier tijdscategorieën. Alleen alerts met een bekende eindtijd worden meegeteld.",
+  "@statsChartDurationInfo": { "description": "Info text for the duration chart" },
+
+  "statsChartByHour": "Alerts per uur",
+  "@statsChartByHour": { "description": "Title for the alerts-by-hour-of-day chart" },
+
+  "statsChartByHourInfo": "Toont op welk uur van de dag de meeste NL-Alerts worden afgegeven, op basis van de starttijd. De getallen op de x-as zijn uren in 24-uursnotatie.",
+  "@statsChartByHourInfo": { "description": "Info text for the by-hour chart" },
+
+  "statsDurLt1h": "< 1u",
+  "@statsDurLt1h": { "description": "Duration bucket label: less than 1 hour" },
+
+  "statsDur1to4h": "1–4u",
+  "@statsDur1to4h": { "description": "Duration bucket label: 1 to 4 hours" },
+
+  "statsDur4to24h": "4–24u",
+  "@statsDur4to24h": { "description": "Duration bucket label: 4 to 24 hours" },
+
+  "statsDurGt24h": "> 24u",
+  "@statsDurGt24h": { "description": "Duration bucket label: more than 24 hours" },
+
+  "statsNoData": "Geen data beschikbaar",
+  "@statsNoData": { "description": "Shown inside a chart when there is no data to display" },
+
+  "alertId": "ID: {id}",
+  "@alertId": {
+    "description": "Alert identifier shown at the bottom of the detail panel",
+    "placeholders": {
+      "id": { "type": "String" }
+    }
+  },
+
+  "sectionAbout": "Over",
+  "@sectionAbout": { "description": "Settings section header for About" },
+
+  "aboutApp": "Over Dutch Warnings",
+  "@aboutApp": { "description": "List tile label that opens the About dialog" },
+
+  "aboutVersion": "Versie {version}",
+  "@aboutVersion": {
+    "description": "Version line shown in the About dialog",
+    "placeholders": {
+      "version": { "type": "String" }
+    }
+  },
+
+  "aboutLegalese": "Copyright © 2026 Dutch Warnings bijdragers\n\nDit programma is vrije software: u mag het verspreiden en/of aanpassen onder de voorwaarden van de GNU General Public License zoals gepubliceerd door de Free Software Foundation, versie 3 of later.",
+  "@aboutLegalese": { "description": "License notice shown in the About dialog" },
+
+  "aboutViewLicenses": "Bekijk licenties",
+  "@aboutViewLicenses": { "description": "Button in About dialog that opens the full license page" }
+}
