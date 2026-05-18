@@ -34,6 +34,7 @@ final locationProvider = FutureProvider<LatLng?>((ref) async {
         }
         if (permission == LocationPermission.denied ||
             permission == LocationPermission.deniedForever) {
+          await ref.read(settingsProvider.notifier).setLocationMode(LocationMode.off);
           return null;
         }
 

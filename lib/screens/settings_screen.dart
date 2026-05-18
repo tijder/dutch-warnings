@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geolocator/geolocator.dart';
 import '../l10n/l10n.dart';
 import '../providers/alerts_provider.dart';
 import '../providers/settings_provider.dart';
@@ -21,6 +22,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   late TextEditingController _lngController;
   bool _tileDirty = false;
   bool _coordsDirty = false;
+  final _locationModeKey = GlobalKey<FormFieldState<LocationMode>>();
 
   @override
   void initState() {
@@ -191,6 +193,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 ),
                 const SizedBox(height: 6),
                 DropdownButtonFormField<LocationMode>(
+                  key: _locationModeKey,
                   initialValue: s.locationMode,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -211,10 +214,21 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       child: Text(l.locationOff),
                     ),
                   ],
-                  onChanged: (v) {
-                    if (v != null) {
-                      ref.read(settingsProvider.notifier).setLocationMode(v);
+                  onChanged: (v) async {
+                    if (v == null) return;
+                    if (v == LocationMode.automatic) {
+                      var permission = await Geolocator.checkPermission();
+                      if (permission == LocationPermission.denied) {
+                        permission = await Geolocator.requestPermission();
+                      }
+                      if (!mounted) return;
+                      if (permission == LocationPermission.denied ||
+                          permission == LocationPermission.deniedForever) {
+                        _locationModeKey.currentState?.reset();
+                        return;
+                      }
                     }
+                    ref.read(settingsProvider.notifier).setLocationMode(v);
                   },
                 ),
                 if (s.locationMode == LocationMode.manual) ...[
