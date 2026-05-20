@@ -22,7 +22,9 @@ class Alert {
 
   String get title {
     final dutch = message.split('***').first.trim();
-    final dot = dutch.indexOf('.');
+    // "NL-Alert." is a label prefix, not meaningful content; skip past it.
+    final searchFrom = dutch.startsWith('NL-Alert.') ? 9 : 0;
+    final dot = dutch.indexOf('.', searchFrom);
     if (dot > 5 && dot < 100) return dutch.substring(0, dot);
     return dutch.length > 90 ? '${dutch.substring(0, 90)}…' : dutch;
   }

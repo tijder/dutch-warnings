@@ -140,6 +140,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get coordinatesSaved => 'Coordinates saved';
 
   @override
+  String get coordinatesInvalid =>
+      'Invalid: latitude −90…90, longitude −180…180';
+
+  @override
+  String get locationPermissionDenied =>
+      'Location access denied. Check app settings.';
+
+  @override
+  String get errorRefreshFailed => 'Refresh failed – showing cached data';
+
+  @override
   String get sectionMap => 'Map';
 
   @override

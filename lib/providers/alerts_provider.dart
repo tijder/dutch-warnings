@@ -102,12 +102,14 @@ class AlertsNotifier extends StateNotifier<AlertsState> {
         isOffline: false,
         hasMore: fresh.isNotEmpty,
       );
-    } catch (_) {
+    } catch (e, st) {
+      debugPrint('[Alerts] refresh error: $e\n$st');
       final cached = await _cache.loadAlerts();
       state = state.copyWith(
         alerts: cached,
         isLoading: false,
         isOffline: true,
+        error: e.toString(),
       );
     }
   }
@@ -129,7 +131,8 @@ class AlertsNotifier extends StateNotifier<AlertsState> {
       } else {
         state = state.copyWith(isLoadingMore: false, hasMore: false);
       }
-    } catch (_) {
+    } catch (e, st) {
+      debugPrint('[Alerts] loadMore error: $e\n$st');
       state = state.copyWith(isLoadingMore: false);
     }
   }
@@ -152,7 +155,8 @@ class AlertsNotifier extends StateNotifier<AlertsState> {
         if (!mounted) break;
         state = state.copyWith(alerts: all);
       }
-    } catch (_) {
+    } catch (e, st) {
+      debugPrint('[Alerts] loadAll error: $e\n$st');
       // stop on error, leave hasMore as-is so user can retry
     }
     if (mounted) state = state.copyWith(isLoadingAll: false);

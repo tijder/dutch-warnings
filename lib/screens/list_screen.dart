@@ -64,6 +64,14 @@ class _ListScreenState extends ConsumerState<ListScreen> {
 
     final l = context.l10n;
 
+    ref.listen<AlertsState>(alertsProvider, (prev, next) {
+      if (next.error != null && next.error != prev?.error) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l.errorRefreshFailed)),
+        );
+      }
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: Row(

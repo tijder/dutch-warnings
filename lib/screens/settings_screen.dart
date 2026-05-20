@@ -56,15 +56,17 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     setState(() => _tileDirty = _tileController.text.trim() != current);
   }
 
+  bool _coordsInRange(double lat, double lng) =>
+      lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180;
+
   void _onCoordsChanged() {
     final s = ref.read(settingsProvider);
-    final latText = _latController.text.trim();
-    final lngText = _lngController.text.trim();
-    final lat = double.tryParse(latText);
-    final lng = double.tryParse(lngText);
+    final lat = double.tryParse(_latController.text.trim());
+    final lng = double.tryParse(_lngController.text.trim());
     setState(() {
       _coordsDirty = lat != null &&
           lng != null &&
+          _coordsInRange(lat, lng) &&
           (lat != s.manualLatitude || lng != s.manualLongitude);
     });
   }
@@ -97,6 +99,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final lat = double.tryParse(_latController.text.trim());
     final lng = double.tryParse(_lngController.text.trim());
     if (lat == null || lng == null) return;
+    if (!_coordsInRange(lat, lng)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(context.l10n.coordinatesInvalid)),
+        );
+      }
+      return;
+    }
     final msg = context.l10n.coordinatesSaved;
     await ref.read(settingsProvider.notifier).setManualCoordinates(lat, lng);
     setState(() => _coordsDirty = false);
@@ -217,6 +227,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   onChanged: (v) async {
                     if (v == null) return;
                     if (v == LocationMode.automatic) {
+                      final messenger = ScaffoldMessenger.of(context);
+                      final deniedMsg = context.l10n.locationPermissionDenied;
                       var permission = await Geolocator.checkPermission();
                       if (permission == LocationPermission.denied) {
                         permission = await Geolocator.requestPermission();
@@ -225,6 +237,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       if (permission == LocationPermission.denied ||
                           permission == LocationPermission.deniedForever) {
                         _locationModeKey.currentState?.reset();
+                        messenger.showSnackBar(
+                          SnackBar(content: Text(deniedMsg)),
+                        );
                         return;
                       }
                     }

@@ -141,6 +141,18 @@ class AppLocalizationsNl extends AppLocalizations {
   String get coordinatesSaved => 'Coördinaten opgeslagen';
 
   @override
+  String get coordinatesInvalid =>
+      'Ongeldig: breedtegraad −90…90, lengtegraad −180…180';
+
+  @override
+  String get locationPermissionDenied =>
+      'Locatietoegang geweigerd. Controleer de app-instellingen.';
+
+  @override
+  String get errorRefreshFailed =>
+      'Vernieuwen mislukt – gecachte gegevens worden getoond';
+
+  @override
   String get sectionMap => 'Kaart';
 
   @override

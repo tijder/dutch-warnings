@@ -1,3 +1,4 @@
+import 'package:dutch_warnings/l10n/l10n.dart';
 import 'package:dutch_warnings/widgets/alert_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -5,7 +6,12 @@ import 'package:intl/date_symbol_data_local.dart';
 
 import '../fixtures/fixtures.dart';
 
-Widget _wrap(Widget child) => MaterialApp(home: Scaffold(body: child));
+Widget _wrap(Widget child) => MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale('nl'),
+      home: Scaffold(body: child),
+    );
 
 void main() {
   setUpAll(() async {

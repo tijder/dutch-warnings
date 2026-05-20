@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 import '../models/alert.dart';
 
@@ -14,10 +15,15 @@ class CacheService {
 
   Future<List<Alert>> loadAlerts() async {
     final box = await _openBox();
-    final alerts = box.values
-        .map((v) => Alert.fromJson(Map<String, dynamic>.from(v as Map)))
-        .toList()
-      ..sort((a, b) => b.startAt.compareTo(a.startAt));
+    final alerts = <Alert>[];
+    for (final v in box.values) {
+      try {
+        alerts.add(Alert.fromJson(Map<String, dynamic>.from(v as Map)));
+      } catch (e) {
+        debugPrint('[Cache] corrupt entry skipped: $e');
+      }
+    }
+    alerts.sort((a, b) => b.startAt.compareTo(a.startAt));
     return alerts;
   }
 

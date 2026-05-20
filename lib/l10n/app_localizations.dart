@@ -326,6 +326,24 @@ abstract class AppLocalizations {
   /// **'Coördinaten opgeslagen'**
   String get coordinatesSaved;
 
+  /// Snackbar message when entered coordinates are out of valid range
+  ///
+  /// In nl, this message translates to:
+  /// **'Ongeldig: breedtegraad −90…90, lengtegraad −180…180'**
+  String get coordinatesInvalid;
+
+  /// Snackbar message when GPS permission is denied
+  ///
+  /// In nl, this message translates to:
+  /// **'Locatietoegang geweigerd. Controleer de app-instellingen.'**
+  String get locationPermissionDenied;
+
+  /// Snackbar message when the API refresh fails
+  ///
+  /// In nl, this message translates to:
+  /// **'Vernieuwen mislukt – gecachte gegevens worden getoond'**
+  String get errorRefreshFailed;
+
   /// Settings section header for map options
   ///
   /// In nl, this message translates to:

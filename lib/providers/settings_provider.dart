@@ -92,14 +92,7 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
 
   Future<void> setManualCoordinates(double lat, double lng) async {
     await _service.setManualCoordinates(lat, lng);
-    state = SettingsState(
-      tileServerUrl: state.tileServerUrl,
-      autoRefreshEnabled: state.autoRefreshEnabled,
-      autoRefreshIntervalMinutes: state.autoRefreshIntervalMinutes,
-      locationMode: state.locationMode,
-      manualLatitude: lat,
-      manualLongitude: lng,
-    );
+    state = state.copyWith(manualLatitude: lat, manualLongitude: lng);
   }
 }
 

@@ -125,6 +125,15 @@
   "coordinatesSaved": "Coördinaten opgeslagen",
   "@coordinatesSaved": { "description": "Snackbar message after saving coordinates" },
 
+  "coordinatesInvalid": "Ongeldig: breedtegraad −90…90, lengtegraad −180…180",
+  "@coordinatesInvalid": { "description": "Snackbar message when entered coordinates are out of valid range" },
+
+  "locationPermissionDenied": "Locatietoegang geweigerd. Controleer de app-instellingen.",
+  "@locationPermissionDenied": { "description": "Snackbar message when GPS permission is denied" },
+
+  "errorRefreshFailed": "Vernieuwen mislukt – gecachte gegevens worden getoond",
+  "@errorRefreshFailed": { "description": "Snackbar message when the API refresh fails" },
+
   "sectionMap": "Kaart",
   "@sectionMap": { "description": "Settings section header for map options" },
 

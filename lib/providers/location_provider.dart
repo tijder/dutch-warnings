@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
@@ -34,7 +35,6 @@ final locationProvider = FutureProvider<LatLng?>((ref) async {
         }
         if (permission == LocationPermission.denied ||
             permission == LocationPermission.deniedForever) {
-          await ref.read(settingsProvider.notifier).setLocationMode(LocationMode.off);
           return null;
         }
 
@@ -45,7 +45,8 @@ final locationProvider = FutureProvider<LatLng?>((ref) async {
           ),
         );
         return LatLng(position.latitude, position.longitude);
-      } catch (_) {
+      } catch (e, st) {
+        debugPrint('[Location] error getting position: $e\n$st');
         return null;
       }
   }

@@ -15,6 +15,12 @@ class NotificationService {
   final _plugin = FlutterLocalNotificationsPlugin();
   bool _initialized = false;
 
+  final _idMap = <String, int>{};
+  int _nextId = 0;
+
+  int _notificationIdFor(String alertId) =>
+      _idMap.putIfAbsent(alertId, () => _nextId++);
+
   /// Called when the user taps a notification. Receives the alert ID.
   void Function(String alertId)? onNotificationTap;
 
@@ -104,7 +110,7 @@ class NotificationService {
     );
     if (!_initialized || kIsWeb) return;
 
-    final notificationId = alert.id.hashCode & 0x7FFFFFFF;
+    final notificationId = _notificationIdFor(alert.id);
     final title = withSound ? 'NL-Alert in jouw gebied!' : 'Nieuw NL-Alert';
 
     NotificationDetails? details;

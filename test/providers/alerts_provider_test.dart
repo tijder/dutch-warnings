@@ -25,8 +25,8 @@ Future<ProviderContainer> makeContainer(
 
 void main() {
   group('AlertsNotifier – initial state', () {
-    test('exposes isLoading=true before initialization completes', () {
-      // Create the container but do NOT await ready.
+    test('exposes isLoading=true before initialization completes', () async {
+      // Create the container but do NOT await ready before asserting.
       final cache = FakeCacheService();
       final api = FakeApiService.singlePage([makeActiveAlert()]);
       final container = ProviderContainer(
@@ -36,10 +36,13 @@ void main() {
           ),
         ],
       );
-      addTearDown(container.dispose);
       // Immediately after construction the state should be loading.
       expect(container.read(alertsProvider).isLoading, isTrue);
       expect(container.read(alertsProvider).alerts, isEmpty);
+      // Drain async initialization before disposal to avoid the
+      // _debugIsMounted assertion from state_notifier.
+      await container.read(alertsProvider.notifier).ready;
+      container.dispose();
     });
   });
 
