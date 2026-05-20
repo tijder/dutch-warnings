@@ -2,7 +2,7 @@ name: dutch_warnings
 description: NL-Alert viewer voor Nederland - offline caching, kaart en locatie.
 publish_to: 'none'
 
-version: 2026.5.19+20260519
+version: 2026.5.20+20260520
 
 environment:
   sdk: ^3.11.5
