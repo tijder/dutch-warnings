@@ -51,3 +51,6 @@ app.*.map.json
 
 # Gegenereerde screenshots (worden aangemaakt door CI of flutter test --update-goldens)
 /docs/screenshots/
+
+# Tijdelijke golden test diff-afbeeldingen
+/test/integration/failures/
