@@ -25,7 +25,7 @@ dependencies:
   intl: ^0.20.2
   url_launcher: ^6.3.1
   auto_route: ^11.1.0
-  flutter_local_notifications: ^21.0.0
+  flutter_local_notifications: ^22.0.0
   fl_chart: 1.2.0
 
 dev_dependencies:
