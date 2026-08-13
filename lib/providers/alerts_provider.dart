@@ -59,10 +59,9 @@ Alert _makeFakeAlert() => Alert(
     );
 
 class AlertsNotifier extends StateNotifier<AlertsState> {
-  AlertsNotifier({ApiService? api, CacheService? cache, Ref? ref})
+  AlertsNotifier({ApiService? api, CacheService? cache, this._ref})
       : _api = api ?? ApiService(),
         _cache = cache ?? CacheService(),
-        _ref = ref,
         super(const AlertsState(alerts: [], isLoading: true)) {
     _ready = _initialize();
   }

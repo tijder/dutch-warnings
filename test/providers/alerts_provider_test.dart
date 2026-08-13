@@ -251,9 +251,8 @@ class _ThrowingApiService extends FakeApiService {
 
 /// Succeeds on first call, then throws on all subsequent calls.
 class _HybridApiService extends FakeApiService {
-  _HybridApiService({required List firstResult, required bool thenThrow})
-      : _firstResult = firstResult,
-        super.empty();
+  _HybridApiService({required this._firstResult, required bool thenThrow})
+      : super.empty();
 
   final List _firstResult;
   int _calls = 0;
