@@ -10,6 +10,12 @@
 ///
 /// The resulting PNGs are saved to docs/screenshots/ and referenced from the
 /// feature docs in docs/.
+///
+/// Tagged `golden` so CI can skip them: docs/screenshots/ is gitignored, so on
+/// a fresh clone there is nothing to compare against, and a preceding
+/// `flutter test -d linux` run overwrites the images with real-renderer output.
+@Tags(['golden'])
+library;
 
 import 'package:dutch_warnings/screens/detail_screen.dart';
 import 'package:dutch_warnings/screens/list_screen.dart';

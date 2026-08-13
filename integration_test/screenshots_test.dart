@@ -3,6 +3,7 @@
 ///   flutter test -d linux integration_test/screenshots_test.dart
 ///
 /// Screenshots land in docs/screenshots/.
+library;
 
 import 'dart:io';
 import 'dart:ui' as ui;
@@ -35,7 +36,6 @@ import 'package:latlong2/latlong.dart';
 
 class _FakeApiService extends ApiService {
   _FakeApiService(this._pages);
-  _FakeApiService.singlePage(List<Alert> alerts) : _pages = [alerts];
   _FakeApiService.empty() : _pages = const [];
 
   final List<List<Alert>> _pages;

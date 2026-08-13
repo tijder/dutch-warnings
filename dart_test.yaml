@@ -1,0 +1,5 @@
+tags:
+  golden:
+    # Golden screenshot tests. They compare against docs/screenshots/, which is
+    # gitignored and regenerated, so they only pass on a machine that has just
+    # run them with --update-goldens. Excluded in CI.

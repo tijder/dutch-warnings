@@ -17,8 +17,11 @@ flutter run -d chrome
 flutter analyze
 
 # Test
-flutter test
+flutter test --exclude-tags golden          # what CI runs
 flutter test test/widget_test.dart          # single test file
+
+# Golden screenshot tests (write to the gitignored docs/screenshots/)
+flutter test --update-goldens test/integration/screenshots_test.dart
 
 # Build
 flutter build apk --release
@@ -27,7 +30,7 @@ flutter build web --release
 
 # Code generation (run after changing routes or ARB files)
 flutter gen-l10n                                          # translations
-dart run build_runner build --delete-conflicting-outputs  # auto_route router
+dart run build_runner build                               # auto_route router
 
 # Docusaurus docs site
 cd website && npm install && npm start   # http://localhost:3000/
