@@ -28,6 +28,14 @@ dependencies:
   flutter_local_notifications: ^22.0.1
   fl_chart: ^1.2.0
 
+# jni is pulled in transitively by path_provider_android. From 1.0.1 onwards its
+# dartjni.h dropped the __ENVP_CAST around the AttachCurrentThread argument, so
+# it passes JNIEnv** where the JNI C API wants void**. Clang 20+ treats
+# -Wincompatible-pointer-types as an error, which breaks `flutter build linux`.
+# Drop this override once upstream restores the cast.
+dependency_overrides:
+  jni: 1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
