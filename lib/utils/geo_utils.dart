@@ -6,9 +6,15 @@ List<LatLng> parsePolygon(String areaString) {
       .split(' ')
       .where((s) => s.isNotEmpty)
       .map((point) {
-    final parts = point.split(',');
-    return LatLng(double.parse(parts[0]), double.parse(parts[1]));
-  }).toList();
+        final parts = point.split(',');
+        if (parts.length != 2) return null;
+        final lat = double.tryParse(parts[0]);
+        final lng = double.tryParse(parts[1]);
+        if (lat == null || lng == null) return null;
+        return LatLng(lat, lng);
+      })
+      .whereType<LatLng>()
+      .toList();
 }
 
 LatLng polygonCenter(List<LatLng> polygon) {

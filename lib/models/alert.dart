@@ -20,13 +20,23 @@ class Alert {
   bool get isActive =>
       stopAt == null || stopAt!.isAfter(DateTime.now().toUtc());
 
+  // Use the first sentence as a title, but only when it reads like a real
+  // sentence: long enough to be meaningful and short enough to fit a title.
+  static const _minTitleLength = 5;
+  static const _maxTitleLength = 100;
+  static const _fallbackTruncateAt = 90;
+
   String get title {
     final dutch = message.split('***').first.trim();
     // "NL-Alert." is a label prefix, not meaningful content; skip past it.
     final searchFrom = dutch.startsWith('NL-Alert.') ? 9 : 0;
     final dot = dutch.indexOf('.', searchFrom);
-    if (dot > 5 && dot < 100) return dutch.substring(0, dot);
-    return dutch.length > 90 ? '${dutch.substring(0, 90)}…' : dutch;
+    if (dot > _minTitleLength && dot < _maxTitleLength) {
+      return dutch.substring(0, dot);
+    }
+    return dutch.length > _fallbackTruncateAt
+        ? '${dutch.substring(0, _fallbackTruncateAt)}…'
+        : dutch;
   }
 
   String get dutchMessage => message.split('***').first.trim();

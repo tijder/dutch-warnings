@@ -28,6 +28,7 @@ class SettingsState {
     double? manualLatitude,
     double? manualLongitude,
     bool? debugInjectAlert,
+    bool clearManualCoordinates = false,
   }) =>
       SettingsState(
         tileServerUrl: tileServerUrl ?? this.tileServerUrl,
@@ -35,8 +36,11 @@ class SettingsState {
         autoRefreshIntervalMinutes:
             autoRefreshIntervalMinutes ?? this.autoRefreshIntervalMinutes,
         locationMode: locationMode ?? this.locationMode,
-        manualLatitude: manualLatitude ?? this.manualLatitude,
-        manualLongitude: manualLongitude ?? this.manualLongitude,
+        manualLatitude:
+            clearManualCoordinates ? null : manualLatitude ?? this.manualLatitude,
+        manualLongitude: clearManualCoordinates
+            ? null
+            : manualLongitude ?? this.manualLongitude,
         debugInjectAlert: debugInjectAlert ?? this.debugInjectAlert,
       );
 }

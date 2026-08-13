@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import '../models/alert.dart';
 
 class ApiService {
@@ -15,9 +16,17 @@ class ApiService {
       _baseUrl,
       queryParameters: after != null ? {'after': after} : null,
     );
-    final data = (response.data['data'] as List?) ?? [];
-    return data
-        .map((j) => Alert.fromJson(j as Map<String, dynamic>))
-        .toList();
+    final body = response.data;
+    final data = (body is Map ? body['data'] : null) as List? ?? [];
+    final alerts = <Alert>[];
+    for (final item in data) {
+      try {
+        alerts.add(Alert.fromJson(item as Map<String, dynamic>));
+      } catch (e) {
+        // Skip a single malformed entry rather than failing the whole fetch.
+        debugPrint('[Api] malformed alert skipped: $e');
+      }
+    }
+    return alerts;
   }
 }

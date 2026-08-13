@@ -141,8 +141,16 @@ class AlertsNotifier extends StateNotifier<AlertsState> {
     if (state.isLoadingAll || state.isLoading || state.alerts.isEmpty) return;
     state = state.copyWith(isLoadingAll: true);
     try {
+      String? prevCursor;
       while (mounted && state.hasMore) {
         final lastId = state.alerts.last.id;
+        // Cursor didn't advance: the API is returning only alerts we already
+        // cached. Stop to avoid spinning forever on overlapping pages.
+        if (lastId == prevCursor) {
+          state = state.copyWith(hasMore: false);
+          break;
+        }
+        prevCursor = lastId;
         final more = await _api.fetchAlerts(after: lastId);
         if (!mounted) break;
         if (more.isEmpty) {
